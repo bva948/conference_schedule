@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Conference, ConferenceRoom, Tag
 
-# Register your models here.
+admin.site.register(Conference)
+admin.site.register(ConferenceRoom)
+admin.site.register(Tag)
