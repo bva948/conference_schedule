@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ object.name }}</title>
+    </head>
+    <body>
+        <h1>Room ID: {{ object.id }}</h1>
+        <h1>{{ object.name }}</h1>
+        <br><a href="{% url 'booking:room_update' object.id %}">Update</a>
+    </body>
+</html>

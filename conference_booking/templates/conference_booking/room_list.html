@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Room list</title>
+    </head>
+    <body>
+        <li>User: {{ user.get_username }}</li>
+        <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+        </ul>
+        {% if room_list %}
+        <ul>
+            {% for room in room_list %}
+            <li><a href="{% url 'booking:room_detail' room.id %}">{{ room.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No rooms are available.</p>
+        {% endif %}
+        <a href="{% url 'booking:new_room' %}">New room</a>
+    </body>
+</html>
